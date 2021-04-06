@@ -1,4 +1,4 @@
-import { pokemon } from './pokemon.js';
+import { pokeData } from './pokemon.js';
 
 export function findById(array, id) {
     for (let item of array) {
@@ -8,9 +8,13 @@ export function findById(array, id) {
     }
 }
 
-export function randomPoke(array) {
+// export function randomPoke(array) {
 
-    const pokeNumber = Math.floor(Math.random() * array.length);
+//     const pokeNumber = Math.floor(Math.random() * array.length);
 
-    return array[pokeNumber];
+//     return array[pokeNumber];
+// }
+
+export function findByPokemonName(name) {
+    return pokeData.find(poke => name === poke.pokemon);
 }
