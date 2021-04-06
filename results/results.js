@@ -8,7 +8,6 @@ import { getPokedex } from '../local-storage-utils.js';
 const button = document.getElementById('pokemonHome');
 
 const table = document.querySelector('table');
-const pokedex = getPokedex();
 
 export function renderTable() {
     const table = document.querySelector('tbody');
