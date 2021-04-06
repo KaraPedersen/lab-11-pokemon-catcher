@@ -42,6 +42,8 @@ function createPokemonDom() {
 
 createPokemonDom();
 
+let totalRounds = 0;
+
 button.addEventListener('click', () => {
     const selectedRadio = document.querySelector('input:checked');
 
@@ -49,5 +51,8 @@ button.addEventListener('click', () => {
 
     capturePokemon(pokeObject);
     createPokemonDom();
-
+    totalRounds++;
+    if (totalRounds === 10) {
+        window.location = './results';
+    }
 });

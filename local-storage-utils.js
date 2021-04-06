@@ -40,12 +40,13 @@ export function encounterPokemon(pokemon) {
 }
 
 export function capturePokemon(pokemon) {
+    console.log(pokemon, 'this pokemon');
 
     const pokedex = getPokedex();
-
     const matchingPokedexItem = findById(pokedex, pokemon.pokemon);
+    console.log(pokedex);
 
-    // matchingPokedexItem.captured++;
+    matchingPokedexItem.captured++;
 
     setPokedex(pokedex);
 
