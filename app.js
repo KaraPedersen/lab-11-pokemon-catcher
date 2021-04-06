@@ -3,11 +3,11 @@ import { generateThreePokemon } from './data-utils.js';
 import { capturePokemon } from './local-storage-utils.js';
 import { findByPokemonName } from './utils.js';
 
-
+const button = document.querySelector('button');
 // set event listeners to update state and DOM
 
-const threePokemon = generateThreePokemon();
-console.log(threePokemon);
+// const threePokemon = generateThreePokemon();
+// console.log(threePokemon);
 
 function createPokemonDom() {
     const pokeRadio1 = document.querySelector('#poke1-radio');
@@ -19,7 +19,7 @@ function createPokemonDom() {
     const pokeLabel3 = document.querySelector('#poke3-label');
 
     const threePokemon = generateThreePokemon();
-    const catchButton = document.querySelector('#catch-button');
+    // const catchButton = document.querySelector('#catch-button');
 
     const img1 = document.querySelector('#poke1-img');
 
@@ -42,10 +42,10 @@ function createPokemonDom() {
 
 createPokemonDom();
 
-catchButton.addEventListener('click', () => {
-    const selectRadio = document.querySelector('input:checked');
+button.addEventListener('click', () => {
+    const selectedRadio = document.querySelector('input:checked');
 
-    const pokeObject = findByPokemonName(selectRadio.value);
+    const pokeObject = findByPokemonName(selectedRadio.value);
 
     capturePokemon(pokeObject);
     createPokemonDom();
