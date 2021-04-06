@@ -13,7 +13,7 @@ export function getPokedex() {
 }
 
 export function setPokedex(parsedPokedex) {
-    const stringyPokedex = JSON.stringy(parsedPokedex);
+    const stringyPokedex = JSON.stringify(parsedPokedex);
 
     localStorage.setItem(POKEDEX, stringyPokedex);
 }
@@ -43,9 +43,11 @@ export function capturePokemon(pokemon) {
 
     const pokedex = getPokedex();
 
-    const matchingPokedexItem.captured++
+    const matchingPokedexItem = findById(pokedex, pokemon.pokemon);
 
-        setPokedex(pokedex);
+    // matchingPokedexItem.captured++;
+
+    setPokedex(pokedex);
 
     return pokedex;
 }
