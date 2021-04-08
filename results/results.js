@@ -16,6 +16,7 @@ const captured = [];
 const encountered = [];
 const resultsPokedex = getPokedex();
 
+
 for (let pokemon of resultsPokedex) {
     names.push(pokemon.id);
     captured.push(pokemon.captured);
