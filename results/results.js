@@ -1,13 +1,57 @@
 console.log('I am here');
 import { getPokedex } from '../local-storage-utils.js';
-// import { pokeData } from '../pokemon.js';
+import { pokeData } from '../pokemon.js';
 
-// import { findByPokemonName } from '../utils.js';
 
 
 const button = document.getElementById('pokemonHome');
 
 const table = document.querySelector('table');
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+const names = [];
+const captured = [];
+const encountered = [];
+const resultsPokedex = getPokedex();
+
+for (let pokemon of resultsPokedex) {
+    names.push(pokemon.id);
+    captured.push(pokemon.captured);
+    encountered.push(pokemon.encountered);
+}
+
+
+
+var myChart = new Chart(ctx, { // eslint-disable-line
+    type: 'bar',
+    data: {
+        labels: names,
+        datasets: [{
+            label: 'Pokemon Captured',
+            data: captured,
+            backgroundColor: 'pink',
+            borderColor: 'red',
+            borderWidth: 3
+        },
+        {
+            label: 'Pokemon Encountered',
+            data: encountered,
+            backgroundColor: 'lightblue',
+            borderColor: 'steelblue',
+            borderWidth: 3
+        }
+        ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: false
+            }
+        }
+    }
+});
 
 export function renderTable() {
     const table = document.querySelector('tbody');
