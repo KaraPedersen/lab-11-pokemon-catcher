@@ -1,6 +1,6 @@
-console.log('I am here');
+
 import { getPokedex } from '../local-storage-utils.js';
-import { pokeData } from '../pokemon.js';
+// import { pokeData } from '../pokemon.js';
 
 
 
